@@ -1,10 +1,5 @@
-const CACHE='race-to-study-v6';
-const ASSETS=['./','./index.html','./styles.css','./v6.css','./app-core.js','./app-views.js','./app-runtime.js','./app-patch.js','./timer-v6.js','./race-v6.js','./v6-init.js','./manifest.webmanifest','./icon.svg','./assets/supercar.webp'];
+const CACHE='race-to-study-v7.2';
+const ASSETS=['./','./index.html','./styles.css','./v6.css','./v7.css','./app-core.js','./app-views.js','./app-runtime.js','./app-patch.js','./timer-v6.js','./race-v6.js','./v6-init.js','./cars-v7.js','./timer-v7.js','./race-v7.js','./race-assets-v7.js','./manifest.webmanifest','./icon.svg','./assets/supercar.webp','./assets/cars/mclaren-p1.svg','./assets/cars/mclaren-speedtail.svg','./assets/cars/bugatti-bolide.webp','./assets/cars/laferrari.webp','./assets/cars/koenigsegg-agera-r.webp','./assets/cars/koenigsegg-regera.webp','./assets/cars/pagani-huayra-roadster.webp','./assets/cars/nissan-gtr.webp','./assets/cars/honda-nsx-r.webp','./assets/cars/honda-nsx.webp','./assets/cars/honda-nsx-type-s.webp'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
-self.addEventListener('fetch',e=>{
- if(e.request.mode==='navigate'){
-  e.respondWith(fetch(e.request).then(r=>{let copy=r.clone();caches.open(CACHE).then(c=>c.put('./index.html',copy));return r}).catch(()=>caches.match('./index.html')));return;
- }
- e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request)));
-});
+self.addEventListener('fetch',e=>{if(e.request.mode==='navigate'){e.respondWith(fetch(e.request).then(r=>{let copy=r.clone();caches.open(CACHE).then(c=>c.put('./index.html',copy));return r}).catch(()=>caches.match('./index.html')));return}e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request)))});
