@@ -3,10 +3,17 @@ const P=['エンジン','タイヤ(F)','タイヤ(R)','ウイング','ボディ'
 const OPT=[5,10,15,20,25,30,45,60],PT={5:5,10:12,15:20,20:30,25:40,30:50,45:70,60:100};
 const SOUNDS=[
  {id:'v8',name:'V8 MUSCLE',icon:'🔥',need:0,desc:'低く太いドロドロ音',base:58,wave:'sawtooth',harm:1.46},
+ {id:'i6',name:'STRAIGHT-6 TURBO',icon:'🌀',need:70,desc:'滑らかな直6サウンド＋ターボ',base:82,wave:'sawtooth',harm:1.55},
  {id:'turbo',name:'TURBO',icon:'💨',need:100,desc:'ターボの吸気＋ブローオフ',base:72,wave:'square',harm:1.62},
+ {id:'rotary',name:'ROTARY 13B',icon:'🔺',need:140,desc:'ロータリーらしい甲高い連続音',base:108,wave:'sawtooth',harm:2.42},
  {id:'ev',name:'EV MOTOR',icon:'⚡',need:180,desc:'高回転モーターのキーン音',base:150,wave:'sine',harm:2.05},
+ {id:'boxer',name:'BOXER FLAT-6',icon:'🥊',need:240,desc:'低く脈打つ水平対向6気筒',base:66,wave:'triangle',harm:1.34},
  {id:'v10',name:'V10',icon:'🏁',need:300,desc:'高く鋭いレーシング音',base:95,wave:'sawtooth',harm:1.83},
- {id:'v12',name:'V12',icon:'👑',need:500,desc:'滑らかな超高回転サウンド',base:110,wave:'triangle',harm:2.18}
+ {id:'amg',name:'AMG V8 BITURBO',icon:'⭐',need:360,desc:'重低音V8＋ツインターボの唸り',base:62,wave:'sawtooth',harm:1.43},
+ {id:'v12',name:'V12',icon:'👑',need:500,desc:'滑らかな超高回転サウンド',base:110,wave:'triangle',harm:2.18},
+ {id:'v6hybrid',name:'V6 HYBRID F1',icon:'🏎️',need:650,desc:'高回転V6＋電動タービン風サウンド',base:120,wave:'sawtooth',harm:1.95},
+ {id:'flatv8',name:'FLAT-PLANE V8',icon:'🎯',need:850,desc:'乾いた鋭い高回転V8サウンド',base:92,wave:'sawtooth',harm:1.76},
+ {id:'hyper',name:'HYPERCAR HYBRID',icon:'🚀',need:1100,desc:'エンジンの咆哮＋EVモーター音',base:104,wave:'triangle',harm:2.08}
 ];
 const MODE={easy:{label:'EASY',target:50},normal:{label:'NORMAL',target:100},hard:{label:'HARD',target:150},custom:{label:'CUSTOM',target:100}};
 const K='raceToStudy_v5';
